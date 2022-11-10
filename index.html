@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordcount App</title>
+</head>
+<body style="display: flex ;justify-content: center ; align-items:center ; height:100vh;font-family: sans-serif; flex-direction: column; background-color: #5A20CB;">
+    <h1 style="font-family:sans-serif;color: #fff;">Enter Text In Input Field and It Will automatically count the number of words you entered</h1>
+    <textarea id="word" style="font-size: 30px; color: #fff ; background-color: black; border:none;" oninput="countWord()"
+    rows="40" cols="70">
+</textarea>
+<br><br>
+
+ 
+<h1 style="color: #fff;"> Word Count:
+    <h1 id="show" style="color: #fff;">0</h1>
+</h1>
+<Script>
+    const countWord = () =>{
+        let word = document.getElementById("word").value;
+
+        let count = 0;
+
+        let split = word.split(' ');
+
+        for (let i = 0; i < split.length; i++) {
+                if (split[i] != "") {
+                    count += 1;
+                }
+            }
+            document.getElementById("show")
+                .innerHTML = count;
+    }
+</Script>
+</body>
+</html>
